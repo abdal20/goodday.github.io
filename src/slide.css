@@ -1,0 +1,49 @@
+/* Quotes.css - Styles for Slideshow (Carousel) */
+
+/* Custom styling for the entire Carousel */
+.slide-custom {
+    max-width: 750px; /* Maximum width of the carousel */
+    margin: auto;
+    box-shadow: 0 14px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  
+  /* Custom styling for each Carousel item */
+  .slide-custom .carousel-item {
+    transition: transform 1s ease, opacity 1s ease-in;
+    height: 450px; /* Fixed height for each carousel item */
+    max-height: 450px; /* Maximum height of each carousel item */
+
+  }
+  
+  /* Customizing the images in the Carousel */
+  .slide-custom .carousel-item img {
+    width: 100%; /* Make image width responsive */
+    height: auto; /* Adjust height automatically */
+    object-fit: cover; /* Cover ensures that aspect ratios are maintained without stretching the image */
+    max-height: 450px; /* Maximum height for images */
+
+  }
+  
+  /* Customizing the Carousel caption */
+  .slide-custom .carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 5px;
+    padding: 1rem;
+  }
+  
+  /* Customizing the caption title */
+  .slide-custom .carousel-caption h3 {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Customizing the caption text */
+  .slide-custom .carousel-caption p {
+    font-size: 1.2rem;
+    color: #ddd;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  }
+  

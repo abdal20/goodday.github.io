@@ -1,0 +1,51 @@
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+
+const Quotes = () => {
+  const [quotes, setQuotes] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
+  const { categoryName } = useParams(); // Get category name from URL
+
+  useEffect(() => {
+    const fetchQuotes = async () => {
+      setIsLoading(true);
+      try {
+        const response = await axios.get(`http://3.129.71.134:8080/api/quotes/category/${encodeURIComponent(categoryName)}`);
+        setQuotes(response.data);
+      } catch (err) {
+        setError('Error fetching quotes: ' + err.message);
+        console.error('Error fetching quotes:', err);
+      }
+      setIsLoading(false);
+    };
+
+    fetchQuotes();
+  }, [categoryName]);
+
+  if (isLoading) {
+    return <div>Loading quotes...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  return (
+    <div>
+      <h1>Quotes for "{decodeURIComponent(categoryName)}"</h1>
+      {quotes.length > 0 ? (
+        <ul>
+          {quotes.map(quote => (
+            <li key={quote.id}>{quote.text} - {quote.author}</li>
+          ))}
+        </ul>
+      ) : (
+        <div>No quotes found for this category.</div>
+      )}
+    </div>
+  );
+};
+
+export default Quotes;

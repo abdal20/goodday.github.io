@@ -1,0 +1,128 @@
+/* Quotes.css */
+
+/* Improve the card columns layout */
+.card-columns {
+  column-count: 3;
+  column-gap: 20px; /* Add some gap between columns */
+}
+
+/* Style for individual cards */
+.card {
+  margin-bottom: 20px;
+  background-color: #d0ded9;
+  border-radius: 10px; /* Increase border-radius for smoother edges */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  transition: transform 0.3s ease-in-out; /* Add a transform transition for hover effect */
+
+  /* Additional hover effect */
+  &:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+  }
+}
+
+/* Style for the card image */
+.img-fluid.mb-2 {
+  border-radius: 10px;
+  border: 2px solid #1ed095; /* Add a border with a color */
+  width: 100%; /* Make the image fluid within the card */
+}
+
+/* Style for the header */
+.text-center.mb-4 {
+  font-size: 43px;
+  background-color: #1ed095;
+  font-style: italic;
+  border-radius: 20px;
+  width: fit-content; /* Adjust width to content */
+  height: auto; /* Adjust height automatically */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border: 2px double #902b2b; /* Double border */
+  text-align: center; /* Center text */
+  padding: 10px; /* Add padding for better spacing */
+  margin: 0 auto; /* Center horizontally */
+}
+
+/* Style for card title */
+.card-title {
+  font-size: 1.5em;
+  color: #000000;
+  font-family: 'Hanalei Fill', cursive;
+}
+
+/* Style for author and category */
+.card-text {
+  font-size: 1em;
+  font-family: "Audiowide", sans-serif;
+  color: #333; /* Darken text color for better readability */
+}
+
+/* Style for the 'Copy Quote' button */
+.btn-primary {
+  background-color: #3bca9a; /* Change button color */
+  border: none; /* Remove border */
+  border-radius: 5px;
+  padding: 5px 10px; /* Add some padding */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s ease-in-out; /* Smooth background color transition */
+
+  /* Additional hover effect */
+  &:hover {
+    background-color: #902b2b; /* Darken button color on hover */
+  }
+}
+
+/* Background for the container */
+.container.mt-5 {
+  background-color: #f2f2f2; /* Light gray background */
+  padding: 20px; /* Add some padding for spacing */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Navbar styles */
+.navbar-custom {
+  background-color: #3bca9a;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-decoration: none;
+  text-shadow: #902b2b;
+  padding: 10px 20px; /* Add padding for better spacing */
+}
+
+/* Navbar link styles */
+.navbar-custom .navbar-nav .nav-link {
+  background-color: #3bca9a;
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+
+  /* Additional hover effect */
+  &:hover, 
+  &.active .nav-link {
+    color: #902b2b; /* Darken link color on hover and active state */
+  }
+}
+
+/* Responsive media query for smaller screens */
+@media (max-width: 768px) {
+  .card-columns {
+    column-count: 1;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .text-center.mb-4 {
+    font-size: 34px;
+    width: 100%;
+    height: auto;
+    line-height: normal;
+    padding: 10px;
+    border-radius: 9px;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
